@@ -1,0 +1,25 @@
+name: water
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pandas>=2.0
+  - numpy
+  - scipy
+  - requests
+  - pyarrow
+  - openpyxl
+  - netcdf4
+  - xarray
+  - geopandas
+  - shapely
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - statsmodels
+  - tqdm
+  - jupyter
+  - ipykernel
+  # Step 2+ — uncomment once you start the LSTM:
+  # - pytorch
