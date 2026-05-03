@@ -57,13 +57,30 @@ report/           # LaTeX source for final report and slides
 
 ## Status
 
-Phase 1 (data ingestion) substantially complete. AEMET weather pull deferred to "future work" given the project timeline — the LSTM uses lagged reservoir storage and seasonality without external weather covariates.
+### Phase 1 — Data ingestion (complete; AEMET deferred)
 
 | Source | Status | Output |
 |---|---|---|
 | MITECO Boletín Hidrológico | ✅ | `data/processed/reservoirs_weekly.csv` (62 reservoirs, 1988–2026) |
 | Spanish Drought Catalogue v1.0 | ✅ | `data/processed/drought_events.csv` (40 events, 15 in MITECO window) |
-| ESYRCE Andalucía 2025 | ✅ | `data/processed/crops_annual.csv` (8 provinces, ~1800 rows) |
-| AEMET OpenData | Deferred | — |
+| ESYRCE Andalucía 2025 | ✅ | `data/processed/crops_annual.csv` (8 provinces, ~1,800 rows) |
+| AEMET OpenData | Deferred | LSTM uses lagged storage + seasonality instead |
 
-Re-run any ingest script with `python <path>` after activating `water`.
+### Phase 2 — Demand model (complete)
+
+| Step | Status | Output |
+|---|---|---|
+| Crop water-requirement coefficients | ✅ | `demand/crop_water_requirements.csv` (FAO-56, ~85 crops) |
+| Provincial basin-share weighting | ✅ | `data/processed/guadalquivir_provinces.csv` |
+| Monthly demand build | ✅ | `data/processed/demand_provincial_monthly.csv` (8 provinces × 12 months) |
+
+Total irrigation demand: 3.74 km³/yr (vs. CHG-published ~3.3 km³/yr authorized).
+
+### Remaining
+
+- Phase 3: LSTM inflow forecaster (storage-delta forecasts with uncertainty bands)
+- Phase 4: Julia / JuMP robust LP
+- Phase 5: Backtest against historical droughts + figures
+- Phase 6: Final report
+
+Re-run any pipeline step with `python <path>` after `conda activate water`.
