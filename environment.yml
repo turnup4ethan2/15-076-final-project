@@ -5,7 +5,7 @@ channels:
 dependencies:
   - python=3.11
   - pandas>=2.0
-  - numpy
+  - "numpy<2"  # required by pip-installed torch 2.2 on Apple Silicon
   - scipy
   - requests
   - pyarrow
@@ -21,5 +21,6 @@ dependencies:
   - tqdm
   - jupyter
   - ipykernel
-  # Step 2+ — uncomment once you start the LSTM:
-  # - pytorch
+  - pip
+  - pip:
+      - torch  # CPU/MPS build pulled from PyPI — the conda-forge build had resolver conflicts
