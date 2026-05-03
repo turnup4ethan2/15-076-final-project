@@ -76,9 +76,16 @@ report/           # LaTeX source for final report and slides
 
 Total irrigation demand: 3.74 km³/yr (vs. CHG-published ~3.3 km³/yr authorized).
 
+### Phase 3 — LSTM inflow forecasting (complete)
+
+| Step | Status | Output |
+|---|---|---|
+| Quantile LSTM (P10/P50/P90, 12-month lookback, 3-month horizon) | ✅ | `forecasting/lstm_inflow.py` |
+| Calibrated on 2023+ holdout (coverage 9% / 50% / 89%) | ✅ | `data/processed/lstm_test_metrics.csv` |
+| Per-reservoir next-quarter forecasts | ✅ | `data/processed/inflow_forecasts.csv` |
+
 ### Remaining
 
-- Phase 3: LSTM inflow forecaster (storage-delta forecasts with uncertainty bands)
 - Phase 4: Julia / JuMP robust LP
 - Phase 5: Backtest against historical droughts + figures
 - Phase 6: Final report
