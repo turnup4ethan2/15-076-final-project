@@ -86,7 +86,7 @@ Total irrigation demand: 3.74 km³/yr (vs. CHG-published ~3.3 km³/yr authorized
 
 ### Remaining
 
-- Phase 4: Julia / JuMP robust LP
+- Phase 4: Julia / JuMP robust LP (potentially Gurobi?)
 - Phase 5: Backtest against historical droughts + figures
 - Phase 6: Final report
 
