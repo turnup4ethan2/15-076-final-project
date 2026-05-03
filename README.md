@@ -57,4 +57,13 @@ report/           # LaTeX source for final report and slides
 
 ## Status
 
-Phase 1 (data ingestion) in progress. MITECO ingestion complete; drought catalogue, ESYRCE, and AEMET pulls remaining.
+Phase 1 (data ingestion) substantially complete. AEMET weather pull deferred to "future work" given the project timeline — the LSTM uses lagged reservoir storage and seasonality without external weather covariates.
+
+| Source | Status | Output |
+|---|---|---|
+| MITECO Boletín Hidrológico | ✅ | `data/processed/reservoirs_weekly.csv` (62 reservoirs, 1988–2026) |
+| Spanish Drought Catalogue v1.0 | ✅ | `data/processed/drought_events.csv` (40 events, 15 in MITECO window) |
+| ESYRCE Andalucía 2025 | ✅ | `data/processed/crops_annual.csv` (8 provinces, ~1800 rows) |
+| AEMET OpenData | Deferred | — |
+
+Re-run any ingest script with `python <path>` after activating `water`.
