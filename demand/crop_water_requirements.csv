@@ -1,0 +1,91 @@
+crop,water_req_m3_ha_yr,source_note
+ACEITUNA DE ALMAZARA,3500,FAO-56; mature olive (oil) under deficit irrigation
+ACEITUNA DE MESA,4500,FAO-56; table olive
+ACEITUNA DE DOBLE APTITUD,4000,Mid-range olive
+NARANJO,7500,Allen et al. 1998; mature citrus
+MANDARINO,7500,Allen et al. 1998; mature citrus
+LIMONERO,7500,Allen et al. 1998; mature citrus
+ALGODON,7000,FAO-56; cotton in Mediterranean climate
+ARROZ,14000,Flooded rice paddy
+MAIZ,6500,FAO-56; grain maize
+GIRASOL,4000,FAO-56; sunflower
+TRIGO DURO,4000,FAO-56; durum wheat irrigated
+TRIGO BLANDO Y SEMIDURO,4000,FAO-56; soft wheat irrigated
+CEBADA DE 2 CARRERAS,3500,FAO-56; barley
+CEBADA DE 6 CARRERAS,3500,FAO-56; barley
+AVENA,3500,FAO-56; oat
+CENTENO,3500,FAO-56; rye
+TRITICALE,3500,FAO-56; triticale
+ALMENDRO,5000,Mediterranean almond
+MELOCOTONERO,6500,FAO-56; peach
+NECTARINO,6500,FAO-56; nectarine
+ALBARICOQUERO,6000,FAO-56; apricot
+MANZANO,6500,FAO-56; apple
+PERAL,6500,FAO-56; pear
+CIRUELO,6000,FAO-56; plum
+CEREZO,6000,FAO-56; cherry
+HIGUERA,4500,FAO-56; fig
+GRANADO,5000,FAO-56; pomegranate
+NOGAL,6000,FAO-56; walnut
+AGUACATE,9000,Mediterranean avocado (high water)
+CHIRIMOYO,7000,Custard apple
+KIWI,8000,Kiwi vine
+TOMATE,6500,FAO-56; tomato
+PIMIENTO,6500,FAO-56; pepper
+PEPINO,5500,FAO-56; cucumber
+CALABACIN,5000,FAO-56; zucchini
+BERENJENA,5500,FAO-56; eggplant
+SANDIA,4500,FAO-56; watermelon
+MELON,4500,FAO-56; melon
+FRESA,5500,FAO-56; strawberry
+FRESON,5500,FAO-56; strawberry
+LECHUGA,3500,FAO-56; lettuce
+ESPINACA,3500,FAO-56; spinach
+ALCACHOFA,5000,FAO-56; artichoke
+COL,4000,FAO-56; cabbage
+COLIFLOR,4000,FAO-56; cauliflower
+APIO,5000,FAO-56; celery
+ZANAHORIA,4000,FAO-56; carrot
+NABO,4000,FAO-56; turnip
+CEBOLLA,4500,FAO-56; onion
+AJO,3500,FAO-56; garlic
+PUERRO,4000,FAO-56; leek
+ESPARRAGO,4500,FAO-56; asparagus
+PATATA,5000,FAO-56; potato
+BONIATO,4500,FAO-56; sweet potato
+JUDIA VERDE,5000,FAO-56; green bean
+GUISANTE VERDE,4500,FAO-56; pea
+HABA VERDE,4500,FAO-56; broad bean
+PIMIENTO PARA PIMENTON,6500,FAO-56; paprika pepper
+TABACO,5500,FAO-56; tobacco
+LUPULO,5000,FAO-56; hop
+LINO TEXTIL,4500,FAO-56; flax
+COLZA,4000,FAO-56; rapeseed
+SOJA,5500,FAO-56; soybean
+CACAHUETE,5500,FAO-56; peanut
+CARTAMO,3500,FAO-56; safflower
+REMOLACHA AZUCARERA,6500,FAO-56; sugar beet
+CAÑA DE AZUCAR,16000,FAO-56; sugarcane (high water)
+GARBANZO,3500,FAO-56; chickpea
+LENTEJA,3500,FAO-56; lentil
+JUDIA SECA,4500,FAO-56; dry bean
+HABA SECA,4000,FAO-56; dry broad bean
+GUISANTE SECO,3500,FAO-56; dry pea
+ALTRAMUZ,3000,FAO-56; lupin
+VEZA,3500,FAO-56; vetch
+YEROS,3500,FAO-56; bitter vetch
+ALFALFA,8000,FAO-56; alfalfa (multi-cut)
+TREBOL,5000,FAO-56; clover
+ESPARCETA,5000,FAO-56; sainfoin
+ZULLA,5000,FAO-56; sulla
+MAIZ FORRAJERO,6500,Forage maize
+SORGO FORRAJERO,5500,Forage sorghum
+RAY-GRASS,5000,Ryegrass forage
+VEZA-AVENA FORRAJE,4500,Vetch-oat forage mix
+NABO FORRAJERO,4000,Forage turnip
+BERZA FORRAJERA,4000,Forage cabbage
+PRADERAS POLIFITAS,6000,Mixed pasture
+VID,4000,FAO-56; wine and table grape
+UVA DE MESA,5000,FAO-56; table grape
+UVA DE VINIFICACION,4000,FAO-56; wine grape
+HUERTOS FAMILIARES,5000,Mixed home gardens (assumption)

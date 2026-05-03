@@ -1,12 +1,12 @@
-province,coverage,notes
-Jaén,full,Headwaters of main stem; major olive belt
-Córdoba,full,Mid-basin; largest reservoirs (Iznájar, La Breña II)
-Sevilla,mostly_full,Lower basin; rice belt around the marismas
-Granada,partial,Genil sub-basin (Negratín, Bermejales)
-Huelva,partial,Northern Sierra Morena reservoirs (Zufre, Aracena)
-Cádiz,partial,Small overlap; most of Cádiz is in Guadalete-Barbate basin
-Almería,partial,Marginal headwater contribution
-Málaga,partial,Marginal northern contribution
-Ciudad Real,partial,Upper basin headwaters
-Albacete,partial,Upper Guadalmena/Segura divide area
-Badajoz,partial,Northwestern marginal contribution
+province,coverage,basin_share,notes
+Jaén,full,0.95,Headwaters of main stem; major olive belt
+Córdoba,full,1.00,"Mid-basin; largest reservoirs (Iznájar, La Breña II)"
+Sevilla,mostly_full,0.95,Lower basin; rice belt around the marismas
+Granada,partial,0.35,"Genil sub-basin (Negratín, Bermejales)"
+Huelva,partial,0.30,"Northern Sierra Morena reservoirs (Zufre, Aracena)"
+Cádiz,partial,0.15,Small overlap; most of Cádiz is in Guadalete-Barbate basin
+Almería,partial,0.10,Marginal headwater contribution
+Málaga,partial,0.15,Marginal northern contribution
+Ciudad Real,partial,0.10,Upper basin headwaters
+Albacete,partial,0.05,Upper Guadalmena/Segura divide area
+Badajoz,partial,0.05,Northwestern marginal contribution
