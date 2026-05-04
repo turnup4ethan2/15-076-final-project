@@ -2,13 +2,13 @@
 
 MIT 15.076 (Analytics for a Better World) final project, spring 2026.
 
-We build a framework for allocating water from Spain's Guadalquivir basin reservoirs to its irrigation districts under drought-driven supply uncertainty. The pipeline has three components:
+We build a framework for allocating water from Spain's Guadalquivir basin reservoirs to **provincial demand nodes** (a geographic simplification of irrigation districts) under drought-driven supply uncertainty. The pipeline has three components:
 
-1. **LSTM inflow forecasting** (Python / PyTorch) — predicts seasonal inflows from historical reservoir series and weather, with uncertainty bands.
-2. **Demand estimation** (Python) — regresses provincial crop mixes on climate to estimate per-district seasonal water demand.
-3. **Robust LP** (Julia / JuMP) — decides monthly hm³ releases per (reservoir, district) pair to maximize aggregate yield, subject to capacity, ecological-flow, and demand constraints, robust to the LSTM's uncertainty set.
+1. **Quantile LSTM** (Python / PyTorch) — predicts **distribution of monthly net storage change** (MITECO weekly storage deltas aggregated to months) with **P10/P50/P90** bands; **AEMET weather features are deferred** (seasonality + lags only).
+2. **Demand estimation** (Python) — **FAO-style crop water coefficients** × ESYRCE irrigated areas, with **basin-share** provincial weights and a fixed monthly ET₀ profile (**not** the originally proposed climate regression while AEMET is deferred).
+3. **LP** (Julia / JuMP + HiGHS) — decides monthly hm³ **releases on seed reservoir→province edges** to maximize **demand-weighted deliveries**, subject to **storage balance** and **capacity** (no explicit **ecological-flow** or conveyance terms yet). Uncertainty is handled via **LSTM quantiles** and optional **stress scaling** of natural deltas.
 
-We backtest the allocation policy against historical droughts (1916–2020) from the CSIC Spanish Drought Catalogue and compare against the rigid status-quo allocation.
+**Drought catalogue:** we ingest CSIC events and compute a **descriptive** basin stress table (`drought_basin_stress.csv`) from MITECO weekly deltas; we do **not** yet re-run the LP through history or implement a full **status-quo allocation baseline** comparison in code.
 
 ## Team
 
@@ -31,7 +31,7 @@ cp .env.example .env
 python forecasting/ingest_miteco.py
 ```
 
-The Julia / JuMP optimization environment is installed separately — see `optimization/README.md` (TBD).
+The Julia / JuMP optimization environment is installed separately — see [`optimization/README.md`](optimization/README.md).
 
 ## Repository layout
 
@@ -43,7 +43,7 @@ forecasting/      # Python — LSTM training, ingest scripts, inflow forecasts
 demand/           # Python — crop-mix regressions, district demand estimates
 optimization/     # Julia — JuMP model, robust LP, scenario runs
 notebooks/        # Exploratory analysis, figures
-report/           # LaTeX source for final report and slides
+report/           # Final report (LaTeX when added), slide prompt, proposal PDFs
 ```
 
 ## Data sources
@@ -84,10 +84,22 @@ Total irrigation demand: 3.74 km³/yr (vs. CHG-published ~3.3 km³/yr authorized
 | Calibrated on 2023+ holdout (coverage 9% / 50% / 89%) | ✅ | `data/processed/lstm_test_metrics.csv` |
 | Per-reservoir next-quarter forecasts | ✅ | `data/processed/inflow_forecasts.csv` |
 
+### Phase 4 — Robust LP (Julia) (implemented)
+
+| Step | Status | Output |
+|---|---|---|
+| JuMP + HiGHS monthly LP on LSTM quantiles | ✅ | `optimization/run_lp.jl` |
+| Scenario / stress scaling via env vars | ✅ | `lp_summary.csv`, `lp_allocations.csv`, `lp_deliveries.csv` |
+
+### Phase 5 — Backtest + figures (lightweight)
+
+| Step | Status | Output |
+|---|---|---|
+| Drought vs. baseline weekly delta summary | ✅ | `optimization/backtest_summary.py` → `drought_basin_stress.csv` |
+| Allocation bar charts | ✅ | `optimization/plot_allocations.py` → `optimization/figures/*.png` |
+
 ### Remaining
 
-- Phase 4: Julia / JuMP robust LP (potentially Gurobi?)
-- Phase 5: Backtest against historical droughts + figures
-- Phase 6: Final report
+- Phase 6: Final report + polish slides (interpret LP outputs vs. limitations)
 
-Re-run any pipeline step with `python <path>` after `conda activate water`.
+Re-run any Python pipeline step with `python <path>` after `conda activate water`. Julia: see `optimization/README.md`.

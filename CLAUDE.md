@@ -87,5 +87,5 @@ Soundness of claims (theoretical + empirical), significance/novelty, relevance, 
 
 ## Source documents
 
-- `15.076 Project Proposal.pdf` — team's specific proposal (authoritative for scope, datasets, methodology).
-- `ABW_proposal (1).pdf` — course-wide guidelines (authoritative for deadlines and rubric).
+- `report/team_project_proposal.pdf` — team's specific proposal (authoritative for scope, datasets, methodology).
+- `report/course_project_guidelines_ABW.pdf` — course-wide guidelines (authoritative for deadlines and rubric).
