@@ -41,6 +41,7 @@ optimization/figures/*.png
 .idea/
 .vscode/
 *.swp
+~$*  # Microsoft Office lock files
 
 # Claude Code project state
 .claude/
